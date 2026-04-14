@@ -1,0 +1,41 @@
+pipeline:
+  name: bucket-v2-provision
+  organization: sarath2k01
+  team: testing
+
+  providers:
+    github:
+      repository: Sarath2k01/lace-test-repo
+      permissions: [read, clone]
+    aws:
+      role_alias: deploy-role
+      regions: [us-east-1]
+
+  artifacts:
+    - name: source
+
+  tasks:
+    - name: provision
+      image: hashicorp/terraform:1.6
+      script: |
+        set -e
+        echo "=== Checking AWS Credentials ==="
+        apk add --no-cache aws-cli git
+        aws sts get-caller-identity
+
+        cd /workspace/source/repo/.lace
+
+        echo "=== Terraform Init ==="
+        terraform init
+
+        echo "=== Terraform Plan ==="
+        terraform plan -out=tfplan
+
+        echo "=== Terraform Apply ==="
+        terraform apply -auto-approve tfplan
+
+        echo ""
+        echo "=== Outputs ==="
+        terraform output
+      workspaces:
+        - name: source
