@@ -1,7 +1,6 @@
 module "bucket" {
   source             = "git::https://github.com/lace-cloud/registry-tf.git//modules/aws/s3/bucket?ref=9451c7cffba19f0d891dd19212e0e5c54b4d6ab0"
   bucket             = "demo-testing-artifacts-sarath-20260414"
-  versioning_enabled = true
 }
 module "log_group" {
   source            = "git::https://github.com/lace-cloud/registry-tf.git//modules/aws/cloudwatch/log_group?ref=7786a6b944ff99c1f5e848f327f6512416c710aa"
