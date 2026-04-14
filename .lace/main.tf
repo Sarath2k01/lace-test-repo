@@ -1,5 +1,5 @@
 module "bucket" {
-  source             = "git::https://github.com/Sarath2k01/registry-tf-private.git//modules/aws/s3/bucket-v2?ref=a687b111"
+  source             = "git::https://github.com/Sarath2k01/registry-tf-private.git//modules/aws/s3/bucket-v2?ref=80fb3f6b"
   BucketName         = "demo-testing-artifacts-sarath-20260414"
 }
 module "log_group" {
