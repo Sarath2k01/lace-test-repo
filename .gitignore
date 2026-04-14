@@ -1,0 +1,5 @@
+.lace/.terraform/
+.lace/.terraform.lock.hcl
+.lace/.canvas/
+.lace/terraform.tfstate
+.lace/terraform.tfstate.backup
