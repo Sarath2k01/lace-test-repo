@@ -1,14 +1,14 @@
 pipeline:
-  name: bucket-v2-provision
+  name: s3-bucket-test
   organization: sarath2k01
-  team: testing
+  team: drift-detection
 
   providers:
     github:
       repository: Sarath2k01/lace-test-repo
       permissions: [read, clone]
     aws:
-      role_alias: deploy-role
+      role_alias: test-role
       regions: [us-east-1]
 
   artifacts:

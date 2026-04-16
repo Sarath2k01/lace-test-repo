@@ -1,14 +1,14 @@
 output "bucket_arn" {
-  value = module.bucket.Arn
+  value = module.bucket.arn
 }
 output "bucket_bucket_domain_name" {
-  value = module.bucket.DomainName
+  value = module.bucket.bucket_domain_name
 }
 output "bucket_bucket_regional_domain_name" {
-  value = module.bucket.RegionalDomainName
+  value = module.bucket.bucket_regional_domain_name
 }
 output "bucket_id" {
-  value = module.bucket.BucketName
+  value = module.bucket.id
 }
 output "log_group_log_group_arn" {
   value = module.log_group.log_group_arn
